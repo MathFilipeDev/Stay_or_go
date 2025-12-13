@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body.morning {
+  background-image: url("../assets/images/morning.png");
+}
+
+body.afternoon {
+  background-image: url("../assets/images/afternoon.png");
+}
+
+body.night {
+  background-image: url("../assets/images/night.png");
+}
+
+
+.menu {
+    text-align: center;
+}
+
+#time {
+    font-size: 96px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
