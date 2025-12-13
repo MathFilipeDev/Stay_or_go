@@ -10,46 +10,81 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    transition: background-image 0.5s ease, color 0.5s ease;
 }
 
 body.morning {
-  background-image: url("../assets/images/morning.png");
+    background-image: url("../assets/images/morning.png");
 }
 
 body.afternoon {
-  background-image: url("../assets/images/afternoon.png");
+    background-image: url("../assets/images/afternoon.png");
 }
 
 body.night {
-  background-image: url("../assets/images/night.png");
+    background-image: url("../assets/images/night.png");
 }
-
 
 .menu {
     text-align: center;
+    padding: 40px;
 }
 
 #time {
     font-size: 96px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
 }
 
 p {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
+    font-weight: 300;
 }
 
 button {
-    padding: 15px 40px;
+    padding: 16px 48px;
     font-size: 16px;
     border: none;
-    border-radius: 25px;
-    background-color: black;
+    border-radius: 999px;
+
+    background-color: rgb(4, 93, 44);
     color: white;
+
     cursor: pointer;
+
 }
 
+button:hover {
+    background-color: rgb(3, 66, 31);
+}
 
+body.afternoon button {
+    background-color: rgb(225, 11, 11);
+}
+
+body.afternoon button:hover {
+    background-color: rgb(199, 11, 11);
+}
+
+body.night {
+    color: white;
+}
+
+body.night #time,
+body.night p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+body.night button {
+    background-color: rgb(25, 4, 89);
+}
+
+body.night button:hover {
+    background-color: rgb(16, 2, 57);
+}
