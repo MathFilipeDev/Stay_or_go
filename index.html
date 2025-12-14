@@ -10,12 +10,25 @@
 <body>
 
     <main>
-        <section class="menu">
+        <section class="menu" id="menu">
             <h1 id="time">00:00</h1>
             <p>Is it worth going out?</p>
-            <button>View Details</button>
+            <button id="viewDetails">View Details</button>
         </section>
     </main>
+    
+    <div class="card hidden">
+    <p id="question"></p>
+
+    <div class="options">
+        <button class="option">Yes</button>
+        <button class="option">No</button>
+    </div>
+
+    <button id="restart" class="restart hidden">Try again</button>
+
+    </div>
+
     
     <script src="js/script.js"></script>
 </body>
