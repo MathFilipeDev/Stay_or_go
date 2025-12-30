@@ -198,34 +198,18 @@ const weatherBox = document.getElementById("weatherBox");
 const weatherText = document.getElementById("weatherText");
 
 async function getWeather() {
-    try {
-        const res = await fetch(
-            "https://api.weatherapi.com/v1/current.json?key=b2acad547d33dce2ec948212cefa2677&q=auto:ip&lang=en&aqi=no"
-        );
+  try {
+    const res = await fetch("/api/weather?city=Sao Paulo");
+    const data = await res.json();
 
-        const data = await res.json();
-        console.log("WEATHER DATA:", data); // 👉 Debug no console
+    weatherText.innerHTML =
+      `🌤️ Weather in ${data.city}: ${data.temp}°C — ${data.condition}`;
+    
+    weatherBox.classList.remove("hidden");
 
-        if (data.error) {
-            console.warn("Weather API error:", data.error.message);
-            weatherText.innerHTML = "Weather unavailable right now.";
-            weatherBox.classList.remove("hidden");
-            return;
-        }
-
-        const city = data.location.name;
-        const temp = Math.round(data.current.temp_c);
-        const condition = data.current.condition.text;
-
-        weatherText.innerHTML = `🌤️ Weather in ${city}: ${temp}°C — ${condition}`;
-        weatherBox.classList.remove("hidden");
-
-    } catch (e) {
-        console.error("Weather fetch failed:", e);
-        weatherText.innerHTML = "Weather unavailable right now.";
-        weatherBox.classList.remove("hidden");
-    }
+  } catch (e) {
+    weatherText.innerHTML = "Weather unavailable right now.";
+    weatherBox.classList.remove("hidden");
+  }
 }
 
-
-getWeather();
