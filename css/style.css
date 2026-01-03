@@ -202,5 +202,39 @@ body.show-card #viewDetails {
     transition: opacity .3s ease;
 }
 
+.weather-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 12px 24px;
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 300;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* CORES POR HORÁRIO */
+body.morning .weather-header {
+    background: rgba(4, 78, 20, 0.55);
+    color: #222;
+}
+
+body.afternoon .weather-header {
+    background: rgba(225, 11, 11, 0.75);
+    color: white;
+}
+
+body.night .weather-header {
+    background: rgba(10, 10, 30, 0.75);
+    color: white;
+}
+
 
 

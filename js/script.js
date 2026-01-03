@@ -194,7 +194,7 @@ function updateProgress() {
    WEATHER API
 ========================= */
 
-const weatherBox = document.getElementById("weatherBox");
+const weatherHeader = document.getElementById("weatherHeader");
 const weatherText = document.getElementById("weatherText");
 
 async function getWeather() {
@@ -211,14 +211,19 @@ async function getWeather() {
     weatherText.innerHTML =
       `🌤️ Weather in ${data.city}: ${data.temp}°C — ${data.condition}`;
 
-    weatherBox.classList.remove("hidden");
+
+    weatherHeader.classList.remove("hidden");
 
   } catch (e) {
     console.error("Weather error:", e);
+
     weatherText.innerHTML = "Weather unavailable right now.";
-    weatherBox.classList.remove("hidden");
+
+
+    weatherHeader.classList.remove("hidden");
   }
 }
+
 
 
 // 👉 CHAMADA DA FUNÇÃO
