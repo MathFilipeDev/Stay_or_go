@@ -212,7 +212,6 @@ body.show-card #viewDetails {
     text-align: center;
 
     font-size: 7px;
-    font-weight: 300;
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
