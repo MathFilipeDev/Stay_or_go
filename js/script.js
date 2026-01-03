@@ -204,12 +204,13 @@ async function getWeather() {
 
     weatherText.innerHTML =
       `🌤️ Weather in ${data.city}: ${data.temp}°C — ${data.condition}`;
-    
-    weatherBox.classList.remove("hidden");
 
+    weatherBox.classList.remove("hidden");
   } catch (e) {
     weatherText.innerHTML = "Weather unavailable right now.";
     weatherBox.classList.remove("hidden");
   }
 }
 
+// 👉 CHAMADA DA FUNÇÃO
+getWeather();
