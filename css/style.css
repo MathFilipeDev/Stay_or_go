@@ -208,16 +208,21 @@ body.show-card #viewDetails {
     left: 0;
     width: 100%;
 
-    padding: 6px 16px;
+    padding: 4px 12px;
     text-align: center;
-
-    font-size: 7px;
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
     transition: background-color 0.4s ease, color 0.4s ease;
 }
+
+.weather-header p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.2;
+}
+
 
 /* CORES POR HORÁRIO */
 body.morning .weather-header {
