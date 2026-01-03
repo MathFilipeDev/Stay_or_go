@@ -1,10 +1,14 @@
 export default async function handler(req, res) {
-
   const apiKey = process.env.WEATHER_API_KEY;
   const city = req.query.city || "Sao Paulo";
 
+  if (!apiKey) {
+    return res.status(500).json({ error: "Missing API key" });
+  }
+
   try {
-    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=en`;
+    const apiUrl =
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=en`;
 
     const response = await fetch(apiUrl);
     const data = await response.json();
