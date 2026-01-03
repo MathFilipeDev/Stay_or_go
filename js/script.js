@@ -199,18 +199,27 @@ const weatherText = document.getElementById("weatherText");
 
 async function getWeather() {
   try {
-    const res = await fetch("/api/weather?city=Sao Paulo");
+    const city = encodeURIComponent("Sao Paulo");
+    const res = await fetch(`/api/weather?city=${city}`);
+
+    if (!res.ok) {
+      throw new Error("API error");
+    }
+
     const data = await res.json();
 
     weatherText.innerHTML =
       `🌤️ Weather in ${data.city}: ${data.temp}°C — ${data.condition}`;
 
     weatherBox.classList.remove("hidden");
+
   } catch (e) {
+    console.error("Weather error:", e);
     weatherText.innerHTML = "Weather unavailable right now.";
     weatherBox.classList.remove("hidden");
   }
 }
+
 
 // 👉 CHAMADA DA FUNÇÃO
 getWeather();
